@@ -96,6 +96,9 @@ Route::middleware('auth')->group(function () {
         Volt::route('/roles/{id}/edit', 'admin.roles.form')->name('admin.roles.edit');
     });
 
+    // Profile / Settings
+    Volt::route('/settings/profile', 'admin.settings.profile')->name('admin.settings.profile');
+
     // Import
     Route::get('/import', [ImportController::class, 'show'])->name('admin.import');
     Route::post('/import', [ImportController::class, 'process'])->name('admin.import.process');
